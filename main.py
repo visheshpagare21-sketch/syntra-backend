@@ -22,13 +22,21 @@ def home():
     }
 
 @app.get("/chat")
-def chat(q:str):
+def chat(q: str):
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=q
-    )
+    try:
 
-    return {
-        "answer":response.text
-    }
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=q
+        )
+
+        return {
+            "answer": response.text
+        }
+
+    except Exception as e:
+
+        return {
+            "answer": str(e)
+        }
