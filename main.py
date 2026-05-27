@@ -12,7 +12,7 @@ app.add_middleware(
 )
 
 client = genai.Client(
-    api_key="AIzaSyD7uiVrydpPQ95xQMI2aw0lWLDMMF22g-8"
+    api_key="AIzaSyCNqwTElUw7qAHR6cLhdSRJyRZm5HDH6RU"
 )
 
 @app.get("/")
